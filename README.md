@@ -1,2 +1,2 @@
 # borrowing-backtest
- php MySql scripts for backtesting borrwing using bitcoin as collateral.
+ php MySql scripts for backtesting borrowing using bitcoin as collateral.
