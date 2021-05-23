@@ -122,7 +122,7 @@ echo '<div class="table-responsive">';
     $backdated_relative_price=$todays_price/$btc_price; 
 
          //display the assumptions   
-        echo '<p>The current BTC price is $'.number_format($todays_price, 0).' and you are assesing borrowing $'.number_format($borrowed, 0).'.00 backtested from the starting date of '.$search_date.' when the BTC price was $'.number_format($btc_price, 0).'.00 so  the borrowing amount has been adjusted relative to that price. The adjusted borrowing amount is $'.number_format($borrowed/$backdated_relative_price, 0).'.00</p>'; 
+        echo '<p>The current BTC price is $'.number_format($todays_price, 0).' and you are assessing borrowing $'.number_format($borrowed, 0).'.00 backtested from the starting date of '.$search_date.' when the BTC price was $'.number_format($btc_price, 0).'.00 so  the borrowing amount has been adjusted relative to that price. The adjusted borrowing amount is $'.number_format($borrowed/$backdated_relative_price, 0).'.00</p>'; 
 
     //calculcate the backdated price relative to todays price    
     $backdated_borrowed=$borrowed/$backdated_relative_price;
@@ -132,14 +132,14 @@ echo '<div class="table-responsive">';
     //display collateral amount
     if($collateral_usd_a<$first_btc_price)
         {
-        $style='<div class style="color:#000000;"><br><br>USD collatarel required: $'.number_format($collateral_usd_a, 0).'.00';
+        $style='<div class style="color:#000000;"><br><br>USD collateral required: $'.number_format($collateral_usd_a, 0).'.00';
         //set continue variable
         $continue='yes'; //set continue variable 
         }
         else
         //display warning if required collateral cannot be met
         {
-        $style='<div class style="color:red; font-weight:bold;"><p>USD collatarel required is $'.number_format(($backdated_borrowed+($backdated_borrowed*$ir))/$ltv, 0).'.00 which is greater than the value of your BTC stash of $'.number_format($first_btc_price*$stash, 2).'</p>
+        $style='<div class style="color:red; font-weight:bold;"><p>USD collateral required is $'.number_format(($backdated_borrowed+($backdated_borrowed*$ir))/$ltv, 0).'.00 which is greater than the value of your BTC stash of $'.number_format($first_btc_price*$stash, 2).'</p>
         <p>You need to adjust the borrowing amount down or increase your BTC stash.</p>';
         $continue='no'; //set continue variable 
         }    
